@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" type="text/css" href="static/css/normalise.css">
+        <link rel="stylesheet" type="text/css" href="static/css/theme.css">
+        <link rel="stylesheet" type="text/css" href="static/css/appointments.css">
+        <link rel="stylesheet" type="text/css" href="static/jquery-ui.min.css">
+        <script src="static/js/lib/jquery-1.11.2.min.js"></script>
+        <script src="static/js/lib/jquery-ui.min.js"></script>
+        <script src="static/js/lib/jquery-ui-timepicker-addon.js"></script>
+        <script src="static/js/common.js"></script>
+        <script src="static/js/appointments.js"></script>
+        <title>Erpis | Appointments</title>
+    </head>
+    <body>
+        <header class="bg-highlight">
+            <div class="logo left">
+                <span class="icon heart"></span>
+                <label>Erpis</label>
+            </div>
+        </header>
+        <div class="content">
+            <div class="menu bg-highlight">
+                <ul>
+                    <li class="active"><a href="appointments.jsp">Appointments</a></li>
+                    <li><a href="emergency.jsp">Emergency Requests</a></li>
+                    <li><a href="logout.jsp">Log Out</a></li>
+                </ul>
+            </div>
+            <div class="dump">
+                <button id="new-appointment" class="create">
+                    + New Appointment
+                </button>
+                <ul></ul>
+            </div>
+            <div class="overlay"></div>
+            <div id="appointment" class="popup">
+                <div class="close">X</div>
+                <div class="form bg-highlight">
+                    <input id="amka" name="amka" type="number"
+                            min="0" max="99999999999"
+                            placeholder="AMKA">
+                    <input id="first-name" name="first-name" type="text"
+                           placeholder="First Name">
+                    <input id="last-name" name="last-name" type="text"
+                           placeholder="Last Name">
+                    <input id="insurance" name="insurance" type="text"
+                           placeholder="Insurance Name">
+                    <input id="examination" name="examination" type="text"
+                           placeholder="Examination">
+                    <div class="error"></div>
+                    <input class="submit" type="button" value="Submit" >
+                </div>
+            </div>
+            <div id="schedule" class="popup">
+                <div class="close">X</div>
+                <div class="form bg-highlight">
+                    <input id="ap_id" type="text"
+                            placeholder="Appointment ID">
+                    <input id="date" type="text" class="datepicker" 
+                           placeholder="Date">
+                    <input id="office" type="text" placeholder="Medical Office">
+                    <div class="error"></div>
+                    <input class="submit" type="button" value="Submit">
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
