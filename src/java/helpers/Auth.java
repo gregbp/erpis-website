@@ -1,8 +1,8 @@
 package helpers;
 
 import javax.servlet.http.HttpServletRequest;
-import dbTest.Manager;
-import dbTest.User;
+import dbtest.Manager;
+import dbtest.User;
 
 public class Auth {
    

@@ -1,9 +1,9 @@
 package helpers;
 
 import javax.servlet.http.HttpServletRequest;
-import dbTest.Manager;
-import dbTest.Appointment;
-import dbTest.Citizen;
+import dbtest.Manager;
+import dbtest.Appointment;
+import dbtest.Citizen;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
