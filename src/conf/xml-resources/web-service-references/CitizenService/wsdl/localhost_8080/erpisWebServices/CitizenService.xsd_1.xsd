@@ -1,0 +1,114 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.1-b419 (branches/2.3.1.x-7937; 2014-08-04T08:11:03+0000) JAXWS-RI/2.2.10-b140803.1500 JAXWS-API/2.2.11 JAXB-RI/2.2.10-b140802.1033 JAXB-API/2.2.12-b140109.1041 svn-revision#unknown. --><xs:schema xmlns:tns="http://dbTest/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://dbTest/">
+
+<xs:element name="getAmka" type="tns:getAmka"/>
+
+<xs:element name="getAmkaResponse" type="tns:getAmkaResponse"/>
+
+<xs:element name="getFullName" type="tns:getFullName"/>
+
+<xs:element name="getFullNameResponse" type="tns:getFullNameResponse"/>
+
+<xs:element name="getId" type="tns:getId"/>
+
+<xs:element name="getIdResponse" type="tns:getIdResponse"/>
+
+<xs:element name="getInsuranceName" type="tns:getInsuranceName"/>
+
+<xs:element name="getInsuranceNameResponse" type="tns:getInsuranceNameResponse"/>
+
+<xs:element name="setAmka" type="tns:setAmka"/>
+
+<xs:element name="setAmkaResponse" type="tns:setAmkaResponse"/>
+
+<xs:element name="setFullName" type="tns:setFullName"/>
+
+<xs:element name="setFullNameResponse" type="tns:setFullNameResponse"/>
+
+<xs:element name="setId" type="tns:setId"/>
+
+<xs:element name="setIdResponse" type="tns:setIdResponse"/>
+
+<xs:element name="setInsuranceName" type="tns:setInsuranceName"/>
+
+<xs:element name="setInsuranceNameResponse" type="tns:setInsuranceNameResponse"/>
+
+<xs:complexType name="getAmka">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getAmkaResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="setFullName">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="setFullNameResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="setId">
+<xs:sequence>
+<xs:element name="arg0" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="setIdResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getId">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getIdResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getFullName">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getFullNameResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getInsuranceName">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getInsuranceNameResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="setInsuranceName">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="setInsuranceNameResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="setAmka">
+<xs:sequence>
+<xs:element name="arg0" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="setAmkaResponse">
+<xs:sequence/>
+</xs:complexType>
+</xs:schema>

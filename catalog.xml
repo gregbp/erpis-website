@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://localhost:8080/erpisWebServices/AppointmentService?wsdl" uri="src/conf/xml-resources/web-service-references/AppointmentService/wsdl/localhost_8080/erpisWebServices/AppointmentService.wsdl"/>
+    <system systemId="http://localhost:8080/erpisWebServices/AppointmentService?xsd=1" uri="src/conf/xml-resources/web-service-references/AppointmentService/wsdl/localhost_8080/erpisWebServices/AppointmentService.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/erpisWebServices/CitizenService?wsdl" uri="src/conf/xml-resources/web-service-references/CitizenService/wsdl/localhost_8080/erpisWebServices/CitizenService.wsdl"/>
+    <system systemId="http://localhost:8080/erpisWebServices/CitizenService?xsd=1" uri="src/conf/xml-resources/web-service-references/CitizenService/wsdl/localhost_8080/erpisWebServices/CitizenService.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/erpisWebServices/ManagerService?wsdl" uri="src/conf/xml-resources/web-service-references/ManagerService/wsdl/localhost_8080/erpisWebServices/ManagerService.wsdl"/>
+    <system systemId="http://localhost:8080/erpisWebServices/ManagerService?xsd=1" uri="src/conf/xml-resources/web-service-references/ManagerService/wsdl/localhost_8080/erpisWebServices/ManagerService.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/erpisWebServices/UserService?wsdl" uri="src/conf/xml-resources/web-service-references/UserService/wsdl/localhost_8080/erpisWebServices/UserService.wsdl"/>
+    <system systemId="http://localhost:8080/erpisWebServices/UserService?xsd=1" uri="src/conf/xml-resources/web-service-references/UserService/wsdl/localhost_8080/erpisWebServices/UserService.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/erpisWebServices/InformationMeetingService?wsdl" uri="src/conf/xml-resources/web-service-references/InformationMeetingService/wsdl/localhost_8080/erpisWebServices/InformationMeetingService.wsdl"/>
+    <system systemId="http://localhost:8080/erpisWebServices/InformationMeetingService?xsd=1" uri="src/conf/xml-resources/web-service-references/InformationMeetingService/wsdl/localhost_8080/erpisWebServices/InformationMeetingService.xsd_1.xsd"/>
+</catalog>

@@ -1,0 +1,204 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.1-b419 (branches/2.3.1.x-7937; 2014-08-04T08:11:03+0000) JAXWS-RI/2.2.10-b140803.1500 JAXWS-API/2.2.11 JAXB-RI/2.2.10-b140802.1033 JAXB-API/2.2.12-b140109.1041 svn-revision#unknown. --><xs:schema xmlns:tns="http://dbTest/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://dbTest/">
+
+<xs:element name="addEmergency" type="tns:addEmergency"/>
+
+<xs:element name="addEmergencyResponse" type="tns:addEmergencyResponse"/>
+
+<xs:element name="addSubscriber" type="tns:addSubscriber"/>
+
+<xs:element name="addSubscriberResponse" type="tns:addSubscriberResponse"/>
+
+<xs:element name="checkUser" type="tns:checkUser"/>
+
+<xs:element name="checkUserResponse" type="tns:checkUserResponse"/>
+
+<xs:element name="citizenConfig" type="tns:citizenConfig"/>
+
+<xs:element name="citizenConfigResponse" type="tns:citizenConfigResponse"/>
+
+<xs:element name="createUser" type="tns:createUser"/>
+
+<xs:element name="createUserResponse" type="tns:createUserResponse"/>
+
+<xs:element name="existAp" type="tns:existAp"/>
+
+<xs:element name="existApResponse" type="tns:existApResponse"/>
+
+<xs:element name="getUser" type="tns:getUser"/>
+
+<xs:element name="getUserResponse" type="tns:getUserResponse"/>
+
+<xs:element name="loadMeetings" type="tns:loadMeetings"/>
+
+<xs:element name="loadMeetingsResponse" type="tns:loadMeetingsResponse"/>
+
+<xs:element name="returnAp" type="tns:returnAp"/>
+
+<xs:element name="returnApResponse" type="tns:returnApResponse"/>
+
+<xs:element name="saveAppointment" type="tns:saveAppointment"/>
+
+<xs:element name="saveAppointmentResponse" type="tns:saveAppointmentResponse"/>
+
+<xs:complexType name="existAp">
+<xs:sequence>
+<xs:element name="arg0" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="existApResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="loadMeetings">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="loadMeetingsResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:informationMeeting" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="informationMeeting">
+<xs:sequence>
+<xs:element name="date" type="tns:timestamp" minOccurs="0"/>
+<xs:element name="description" type="xs:string" minOccurs="0"/>
+<xs:element name="id" type="xs:int"/>
+<xs:element name="name" type="xs:string" minOccurs="0"/>
+<xs:element name="place" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="timestamp">
+<xs:sequence>
+<xs:element name="nanos" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addSubscriber">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addSubscriberResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="createUser">
+<xs:sequence>
+<xs:element name="arg0" type="tns:user" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="user">
+<xs:sequence>
+<xs:element name="id" type="xs:int"/>
+<xs:element name="password" type="xs:string" minOccurs="0"/>
+<xs:element name="role" type="xs:string" minOccurs="0"/>
+<xs:element name="uname" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="createUserResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getUser">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getUserResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:user" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="citizenConfig">
+<xs:sequence>
+<xs:element name="arg0" type="tns:citizen" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="citizen">
+<xs:sequence>
+<xs:element name="amka" type="xs:int"/>
+<xs:element name="fullName" type="xs:string" minOccurs="0"/>
+<xs:element name="id" type="xs:string" minOccurs="0"/>
+<xs:element name="insuranceName" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="citizenConfigResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addEmergency">
+<xs:sequence>
+<xs:element name="arg0" type="xs:int"/>
+<xs:element name="arg1" type="xs:string" minOccurs="0"/>
+<xs:element name="arg2" type="tns:timestamp" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addEmergencyResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="checkUser">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"/>
+<xs:element name="arg1" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="checkUserResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="returnAp">
+<xs:sequence>
+<xs:element name="arg0" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="returnApResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:appointment" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="appointment">
+<xs:sequence>
+<xs:element name="amka" type="xs:int"/>
+<xs:element name="date" type="tns:timestamp" minOccurs="0"/>
+<xs:element name="emergencyDate" type="tns:timestamp" minOccurs="0"/>
+<xs:element name="emergencyReason" type="xs:string" minOccurs="0"/>
+<xs:element name="examination" type="xs:string" minOccurs="0"/>
+<xs:element name="fullName" type="xs:string" minOccurs="0"/>
+<xs:element name="id" type="xs:int"/>
+<xs:element name="insuranceName" type="xs:string" minOccurs="0"/>
+<xs:element name="medicalOffice" type="xs:string" minOccurs="0"/>
+<xs:element name="userId" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="saveAppointment">
+<xs:sequence>
+<xs:element name="arg0" type="tns:appointment" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="saveAppointmentResponse">
+<xs:sequence/>
+</xs:complexType>
+</xs:schema>

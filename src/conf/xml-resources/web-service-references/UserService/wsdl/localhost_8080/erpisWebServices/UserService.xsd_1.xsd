@@ -1,0 +1,114 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.1-b419 (branches/2.3.1.x-7937; 2014-08-04T08:11:03+0000) JAXWS-RI/2.2.10-b140803.1500 JAXWS-API/2.2.11 JAXB-RI/2.2.10-b140802.1033 JAXB-API/2.2.12-b140109.1041 svn-revision#unknown. --><xs:schema xmlns:tns="http://dbTest/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://dbTest/">
+
+<xs:element name="getId" type="tns:getId"/>
+
+<xs:element name="getIdResponse" type="tns:getIdResponse"/>
+
+<xs:element name="getPassword" type="tns:getPassword"/>
+
+<xs:element name="getPasswordResponse" type="tns:getPasswordResponse"/>
+
+<xs:element name="getRole" type="tns:getRole"/>
+
+<xs:element name="getRoleResponse" type="tns:getRoleResponse"/>
+
+<xs:element name="getUname" type="tns:getUname"/>
+
+<xs:element name="getUnameResponse" type="tns:getUnameResponse"/>
+
+<xs:element name="setId" type="tns:setId"/>
+
+<xs:element name="setIdResponse" type="tns:setIdResponse"/>
+
+<xs:element name="setPassword" type="tns:setPassword"/>
+
+<xs:element name="setPasswordResponse" type="tns:setPasswordResponse"/>
+
+<xs:element name="setRole" type="tns:setRole"/>
+
+<xs:element name="setRoleResponse" type="tns:setRoleResponse"/>
+
+<xs:element name="setUname" type="tns:setUname"/>
+
+<xs:element name="setUnameResponse" type="tns:setUnameResponse"/>
+
+<xs:complexType name="getRole">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getRoleResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getUname">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getUnameResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="setUname">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="setUnameResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="setPassword">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="setPasswordResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="setId">
+<xs:sequence>
+<xs:element name="arg0" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="setIdResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getId">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getIdResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="setRole">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="setRoleResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getPassword">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getPasswordResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

@@ -1,0 +1,316 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.1-b419 (branches/2.3.1.x-7937; 2014-08-04T08:11:03+0000) JAXWS-RI/2.2.10-b140803.1500 JAXWS-API/2.2.11 JAXB-RI/2.2.10-b140802.1033 JAXB-API/2.2.12-b140109.1041 svn-revision#unknown. --><xs:schema xmlns:tns="http://dbTest/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://dbTest/">
+
+<xs:element name="getAmka" type="tns:getAmka"/>
+
+<xs:element name="getAmkaResponse" type="tns:getAmkaResponse"/>
+
+<xs:element name="getDate" type="tns:getDate"/>
+
+<xs:element name="getDateResponse" type="tns:getDateResponse"/>
+
+<xs:element name="getDateTimestamp" type="tns:getDateTimestamp"/>
+
+<xs:element name="getDateTimestampResponse" type="tns:getDateTimestampResponse"/>
+
+<xs:element name="getEmergencyDate" type="tns:getEmergencyDate"/>
+
+<xs:element name="getEmergencyDateResponse" type="tns:getEmergencyDateResponse"/>
+
+<xs:element name="getEmergencyDateTimestamp" type="tns:getEmergencyDateTimestamp"/>
+
+<xs:element name="getEmergencyDateTimestampResponse" type="tns:getEmergencyDateTimestampResponse"/>
+
+<xs:element name="getEmergencyReason" type="tns:getEmergencyReason"/>
+
+<xs:element name="getEmergencyReasonResponse" type="tns:getEmergencyReasonResponse"/>
+
+<xs:element name="getExamination" type="tns:getExamination"/>
+
+<xs:element name="getExaminationResponse" type="tns:getExaminationResponse"/>
+
+<xs:element name="getFullName" type="tns:getFullName"/>
+
+<xs:element name="getFullNameResponse" type="tns:getFullNameResponse"/>
+
+<xs:element name="getId" type="tns:getId"/>
+
+<xs:element name="getIdResponse" type="tns:getIdResponse"/>
+
+<xs:element name="getInsuranceName" type="tns:getInsuranceName"/>
+
+<xs:element name="getInsuranceNameResponse" type="tns:getInsuranceNameResponse"/>
+
+<xs:element name="getMedicalOffice" type="tns:getMedicalOffice"/>
+
+<xs:element name="getMedicalOfficeResponse" type="tns:getMedicalOfficeResponse"/>
+
+<xs:element name="getUserId" type="tns:getUserId"/>
+
+<xs:element name="getUserIdResponse" type="tns:getUserIdResponse"/>
+
+<xs:element name="setAmka" type="tns:setAmka"/>
+
+<xs:element name="setAmkaResponse" type="tns:setAmkaResponse"/>
+
+<xs:element name="setDate" type="tns:setDate"/>
+
+<xs:element name="setDateResponse" type="tns:setDateResponse"/>
+
+<xs:element name="setEmergencyDate" type="tns:setEmergencyDate"/>
+
+<xs:element name="setEmergencyDateResponse" type="tns:setEmergencyDateResponse"/>
+
+<xs:element name="setEmergencyReason" type="tns:setEmergencyReason"/>
+
+<xs:element name="setEmergencyReasonResponse" type="tns:setEmergencyReasonResponse"/>
+
+<xs:element name="setExamination" type="tns:setExamination"/>
+
+<xs:element name="setExaminationResponse" type="tns:setExaminationResponse"/>
+
+<xs:element name="setFullName" type="tns:setFullName"/>
+
+<xs:element name="setFullNameResponse" type="tns:setFullNameResponse"/>
+
+<xs:element name="setId" type="tns:setId"/>
+
+<xs:element name="setIdResponse" type="tns:setIdResponse"/>
+
+<xs:element name="setInsuranceName" type="tns:setInsuranceName"/>
+
+<xs:element name="setInsuranceNameResponse" type="tns:setInsuranceNameResponse"/>
+
+<xs:element name="setMedicalOffice" type="tns:setMedicalOffice"/>
+
+<xs:element name="setMedicalOfficeResponse" type="tns:setMedicalOfficeResponse"/>
+
+<xs:element name="setUserId" type="tns:setUserId"/>
+
+<xs:element name="setUserIdResponse" type="tns:setUserIdResponse"/>
+
+<xs:complexType name="getAmka">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getAmkaResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getExamination">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getExaminationResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="setMedicalOffice">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="setMedicalOfficeResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getEmergencyDateTimestamp">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getEmergencyDateTimestampResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:long"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getFullName">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getFullNameResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getInsuranceName">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getInsuranceNameResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getUserId">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getUserIdResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="setEmergencyReason">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="setEmergencyReasonResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getEmergencyDate">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getEmergencyDateResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:timestamp" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="timestamp">
+<xs:sequence>
+<xs:element name="nanos" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="setFullName">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="setFullNameResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getEmergencyReason">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getEmergencyReasonResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getDateTimestamp">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getDateTimestampResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:long"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getId">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getIdResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="setId">
+<xs:sequence>
+<xs:element name="arg0" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="setIdResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getMedicalOffice">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getMedicalOfficeResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getDate">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getDateResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:timestamp" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="setDate">
+<xs:sequence>
+<xs:element name="arg0" type="tns:timestamp" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="setDateResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="setUserId">
+<xs:sequence>
+<xs:element name="arg0" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="setUserIdResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="setAmka">
+<xs:sequence>
+<xs:element name="arg0" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="setAmkaResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="setExamination">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="setExaminationResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="setEmergencyDate">
+<xs:sequence>
+<xs:element name="arg0" type="tns:timestamp" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="setEmergencyDateResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="setInsuranceName">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="setInsuranceNameResponse">
+<xs:sequence/>
+</xs:complexType>
+</xs:schema>
