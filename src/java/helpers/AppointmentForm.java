@@ -1,9 +1,7 @@
 package helpers;
 
 import javax.servlet.http.HttpServletRequest;
-import dbTest.Manager;
-import dbTest.Appointment;
-import dbTest.Citizen;
+import dbtest.* ;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -30,7 +28,7 @@ public class AppointmentForm {
         this.error = error;
     }
     
-    public boolean updateAppointment (HttpServletRequest request) {
+    /*public boolean updateAppointment (HttpServletRequest request) {
         String date = request.getParameter(DATE);
         String office = request.getParameter(OFFICE);
         String apId = request.getParameter(AP_ID);
@@ -57,14 +55,14 @@ public class AppointmentForm {
         int ap_id = Integer.parseInt(apId);
         
         // Update appointment
-        Manager m = new Manager();
+        //Manager m = new Manager();
         
-        if(m.existAp(ap_id)){
+        if(existAp(ap_id)){
             Appointment appointment = new Appointment();
             appointment.setDate(new Timestamp(dt.getTime()));
             appointment.setMedicalOffice(office);
             appointment.setId(ap_id);
-            m = new Manager();
+            //m = new Manager();
             
             System.out.println(appointment.getDate());//upopto
                 System.out.println(appointment.getMedicalOffice());
@@ -72,7 +70,7 @@ public class AppointmentForm {
             m.updateAppointment(appointment);
         }
         return true;
-    }
+    }*/
     
     public boolean scheduleAppointment (HttpServletRequest request) {
         
@@ -106,31 +104,82 @@ public class AppointmentForm {
         }
 
         // Check if citizen exists
-        Citizen citizen = new Citizen(
+       /*Citizen citizen = new Citizen(
             firstName,
             lastName,
             insurance,
             Integer.parseInt(amka)
-        );
+        );*/
+        Citizen citizen = new Citizen();
+        citizen.setFullName(firstName+" "+lastName);
+        citizen.setInsuranceName(insurance);
+        citizen.setId(amka);
 
-        Manager manager = new Manager();
-        if (!manager.citizenConfig(citizen)) {
+        //Manager manager = new Manager();
+        if (!citizenConfig(citizen)) {
             setError("Citizen does not exist");
             return false;
         }
 
         // Create appointment
-        Appointment appointment = new Appointment(
-            citizen.getFullName(),
+        Appointment appointment = new Appointment();
+        /*    citizen.getFullName(),
             citizen.getInsuranceName(),
             Integer.parseInt(request.getAttribute("userid").toString()),
             citizen.getAmka(),
             examination
-        );
+        );*/
         
-        manager = new Manager();
-        manager.saveAppointment(appointment);
+        appointment.setAmka(citizen.getAmka());
+        appointment.setFullName(citizen.getFullName());
+        appointment.setUserId(Integer.parseInt(request.getAttribute("userid").toString()));
+        appointment.setExamination(examination);
+        
+        //manager = new Manager();
+        saveAppointment(appointment);
         
         return true;
+    }
+
+    private static boolean existAp(int arg0) {
+        dbtest.ManagerService service = new dbtest.ManagerService();
+        dbtest.Manager port = service.getManagerPort();
+        return port.existAp(arg0);
+    }
+
+    private static void setAmka(int arg0) {
+        dbtest.CitizenService service = new dbtest.CitizenService();
+        dbtest.Citizen port = service.getCitizenPort();
+        port.setAmka(arg0);
+    }
+
+    private static void setFullName(java.lang.String arg0) {
+        dbtest.CitizenService service = new dbtest.CitizenService();
+        dbtest.Citizen port = service.getCitizenPort();
+        port.setFullName(arg0);
+    }
+
+    private static void setId(String arg0) {
+        dbtest.CitizenService service = new dbtest.CitizenService();
+        dbtest.Citizen port = service.getCitizenPort();
+        port.setId(arg0);
+    }//isws xtuphsei
+
+    private static void setInsuranceName(java.lang.String arg0) {
+        dbtest.CitizenService service = new dbtest.CitizenService();
+        dbtest.Citizen port = service.getCitizenPort();
+        port.setInsuranceName(arg0);
+    }
+
+    private static boolean citizenConfig(dbtest.Citizen arg0) {
+        dbtest.ManagerService service = new dbtest.ManagerService();
+        dbtest.Manager port = service.getManagerPort();
+        return port.citizenConfig(arg0);
+    }
+
+    private static void saveAppointment(dbtest.Appointment arg0) {
+        dbtest.ManagerService service = new dbtest.ManagerService();
+        dbtest.Manager port = service.getManagerPort();
+        port.saveAppointment(arg0);
     }
 }
