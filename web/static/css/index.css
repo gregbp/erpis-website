@@ -27,3 +27,7 @@
 .login {
     width: 320px;
 }
+header .right {
+    marign-right: 1em;
+    padding: 1em;
+}

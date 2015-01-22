@@ -133,9 +133,10 @@ function xmlToAppointment (xml) {
 
 $(function () {
     // Close popups
-    $('.overlay, .popup .close').click(function () {
-        hidePopup();
-    });
+    if (!$('#index').length)
+        $('.overlay, .popup .close').click(function () {
+            hidePopup();
+        });
     // Render datepickers
     $(".datepicker").datetimepicker();
 });
