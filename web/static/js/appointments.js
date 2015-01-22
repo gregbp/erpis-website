@@ -28,24 +28,7 @@ $(function () {
         });
     });
     
-    $('#schedule .submit').click(function () {
-        $.ajax({
-            url: 'appointments.jsp',
-            type: 'POST',
-            data: {
-               action: 'update',
-               ap_id: $('#ap_id').val(),
-               date: $('#date').val(),
-               office: $('#office').val(),
-            },
-            success: function () {
-                refresh();
-            },
-            error: function (jqXHR) {
-                showError(jqXHR.responseText);
-            },
-        });
-    });
+    
 
     $.ajax({
         url: 'getAppointments.jsp',
