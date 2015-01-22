@@ -1,8 +1,7 @@
 package helpers;
 
 import javax.servlet.http.HttpServletRequest;
-import dbTest.Manager;
-import dbTest.User;
+
 
 public class Auth {
    
@@ -11,10 +10,9 @@ public class Auth {
 
     public boolean logIn (HttpServletRequest request) {
 
-        Manager manager = new Manager();
-
+        
         // Connect to the database and check if user exists
-        Boolean exists = manager.checkUser(
+        Boolean exists = logInExist(
             request.getParameter(USER),
             request.getParameter(PASS)
         );
@@ -24,12 +22,10 @@ public class Auth {
 
         // Save username to session so that we know
         // if a user has already logged in
-        
-        manager = new Manager();
-        User user = manager.getUser(request.getParameter(PASS));
+                
         request.getSession().setAttribute(USER, request.getParameter(USER));
-        request.getSession().setAttribute("role", user.getRole());
-        request.getSession().setAttribute("id", user.getId());
+        request.getSession().setAttribute("role", returnRole(request.getParameter(USER),request.getParameter(PASS)));
+        request.getSession().setAttribute("id",  returnId(request.getParameter(USER),request.getParameter(PASS)));
         
         return true;
     }
@@ -40,5 +36,23 @@ public class Auth {
 
     public boolean isLoggedIn (HttpServletRequest request) {
         return request.getSession().getAttribute(USER) != null;
+    }
+
+    private static boolean logInExist(java.lang.String arg0, java.lang.String arg1) {
+        dbtest.WsManService service = new dbtest.WsManService();
+        dbtest.WsMan port = service.getWsManPort();
+        return port.logInExist(arg0, arg1);
+    }
+
+    private static int returnId(java.lang.String arg0, java.lang.String arg1) {
+        dbtest.WsManService service = new dbtest.WsManService();
+        dbtest.WsMan port = service.getWsManPort();
+        return port.returnId(arg0, arg1);
+    }
+
+    private static String returnRole(java.lang.String arg0, java.lang.String arg1) {
+        dbtest.WsManService service = new dbtest.WsManService();
+        dbtest.WsMan port = service.getWsManPort();
+        return port.returnRole(arg0, arg1);
     }
 }
