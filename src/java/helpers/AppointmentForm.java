@@ -1,9 +1,7 @@
 package helpers;
 
 import javax.servlet.http.HttpServletRequest;
-import dbTest.Manager;
-import dbTest.Appointment;
-import dbTest.Citizen;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -30,7 +28,7 @@ public class AppointmentForm {
         this.error = error;
     }
     
-    public boolean updateAppointment (HttpServletRequest request) {
+    /*public boolean updateAppointment (HttpServletRequest request) {
         String date = request.getParameter(DATE);
         String office = request.getParameter(OFFICE);
         String apId = request.getParameter(AP_ID);
@@ -72,7 +70,7 @@ public class AppointmentForm {
             m.updateAppointment(appointment);
         }
         return true;
-    }
+    }*/
     
     public boolean scheduleAppointment (HttpServletRequest request) {
         
@@ -104,33 +102,14 @@ public class AppointmentForm {
             setError("Invalid examination name");
             return false;
         }
+            
+       
+        return schedApp(firstName,lastName,insurance,amka,examination,Integer.parseInt(request.getAttribute("userid").toString()));
+    }
 
-        // Check if citizen exists
-        Citizen citizen = new Citizen(
-            firstName,
-            lastName,
-            insurance,
-            Integer.parseInt(amka)
-        );
-
-        Manager manager = new Manager();
-        if (!manager.citizenConfig(citizen)) {
-            setError("Citizen does not exist");
-            return false;
-        }
-
-        // Create appointment
-        Appointment appointment = new Appointment(
-            citizen.getFullName(),
-            citizen.getInsuranceName(),
-            Integer.parseInt(request.getAttribute("userid").toString()),
-            citizen.getAmka(),
-            examination
-        );
-        
-        manager = new Manager();
-        manager.saveAppointment(appointment);
-        
-        return true;
+    private static boolean schedApp(java.lang.String arg0, java.lang.String arg1, java.lang.String arg2, java.lang.String arg3, java.lang.String arg4, int arg5) {
+        dbtest.WsManService service = new dbtest.WsManService();
+        dbtest.WsMan port = service.getWsManPort();
+        return port.schedApp(arg0, arg1, arg2, arg3, arg4, arg5);
     }
 }
