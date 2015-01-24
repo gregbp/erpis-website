@@ -15,7 +15,7 @@
 	dbtest.WsManService service = new dbtest.WsManService();
 	dbtest.WsMan port = service.getWsManPort();
 	 // TODO initialize WS operation arguments here
-	int arg0 = 0;
+	int arg0 =123456789;
 	// TODO process result here
 	java.lang.String result = port.loadApps(arg0);
 	out.println("Result = "+result);
