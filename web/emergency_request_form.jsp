@@ -1,12 +1,9 @@
 
-<%@page import="dbTest.Appointment"%>
 <%@page import="java.sql.Timestamp"%>
 <%@page import="helpers.Auth"%>
 <%@page import="java.text.ParseException"%>
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="java.util.Date"%>
-<%@page import="dbTest.Manager"%>
-<%@page import="dbTest.User"%>
 <%@page import="helpers.ResponseHandler"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
@@ -38,50 +35,35 @@ else if (method == "POST") {
         int ap_id = 0;
         String dt1 = request.getParameter( "date" );
         String rsn = request.getParameter("reason"); 
-        Date dt = new Date();
-    
+        Date dt = new Date();  
     
     
         try{
             ap_id = Integer.parseInt(str_ap_ad);
             SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy HH:mm");
             dateFormat.setLenient(false);
-            try {     
+            try {
                 dt = dateFormat.parse(dt1.trim());
-                //insert data into database
-                 Manager m = new Manager();
-
-                 if(m.existAp(ap_id)){
-                     m = new Manager();
-                     m.addEmergency(ap_id, rsn, new Timestamp(dt.getTime()));
-                     rHandler.success();
-                 }else{
-                     rHandler.error("Appointment does not exist");
-                 }
-
-            } catch (ParseException pe) {
-                rHandler.error("Invalid date");
+                dbtest.WsManService service = new dbtest.WsManService();
+                dbtest.WsMan port = service.getWsManPort();
+                 // TODO initialize WS operation arguments here
+                int arg0 = ap_id;
+                java.lang.String arg1 = rsn;
+                long arg2  = dt.getTime();             
+                // TODO process result here
+                boolean result = port.addEm(arg0, arg1, arg2);
+                out.println("Result = "+result);
+                if(!result)
+                    rHandler.error("Appointment does not exist");
+                else{
+                    rHandler.success();
+                }
+            } catch (Exception ex) {
+                // TODO handle custom exceptions here
             }
         } catch (NumberFormatException e){
             rHandler.error("Invalid appointment id");
-        }
+        } 
    
-        
- 
-    
-        
-        
-        
- 
-    
-    }
-}
-    
-    
-    
-    
-    
-    
-    
     
 %>
