@@ -1,0 +1,158 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Metro/2.3 (tags/2.3-7528; 2013-04-29T19:34:10+0000) JAXWS-RI/2.2.8 JAXWS/2.2 svn-revision#unknown. --><xs:schema xmlns:tns="http://dbTest/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://dbTest/">
+
+<xs:element name="addEm" type="tns:addEm"/>
+
+<xs:element name="addEmResponse" type="tns:addEmResponse"/>
+
+<xs:element name="addSub" type="tns:addSub"/>
+
+<xs:element name="addSubResponse" type="tns:addSubResponse"/>
+
+<xs:element name="crUser" type="tns:crUser"/>
+
+<xs:element name="crUserResponse" type="tns:crUserResponse"/>
+
+<xs:element name="loadApps" type="tns:loadApps"/>
+
+<xs:element name="loadAppsResponse" type="tns:loadAppsResponse"/>
+
+<xs:element name="loadMeet" type="tns:loadMeet"/>
+
+<xs:element name="loadMeetResponse" type="tns:loadMeetResponse"/>
+
+<xs:element name="logInExist" type="tns:logInExist"/>
+
+<xs:element name="logInExistResponse" type="tns:logInExistResponse"/>
+
+<xs:element name="returnId" type="tns:returnId"/>
+
+<xs:element name="returnIdResponse" type="tns:returnIdResponse"/>
+
+<xs:element name="returnRole" type="tns:returnRole"/>
+
+<xs:element name="returnRoleResponse" type="tns:returnRoleResponse"/>
+
+<xs:element name="schedApp" type="tns:schedApp"/>
+
+<xs:element name="schedAppResponse" type="tns:schedAppResponse"/>
+
+<xs:complexType name="returnId">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"/>
+<xs:element name="arg1" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="returnIdResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="crUser">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"/>
+<xs:element name="arg1" type="xs:string" minOccurs="0"/>
+<xs:element name="arg2" type="xs:string" minOccurs="0"/>
+<xs:element name="arg3" type="xs:string" minOccurs="0"/>
+<xs:element name="arg4" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="crUserResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addSub">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addSubResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="schedApp">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"/>
+<xs:element name="arg1" type="xs:string" minOccurs="0"/>
+<xs:element name="arg2" type="xs:string" minOccurs="0"/>
+<xs:element name="arg3" type="xs:string" minOccurs="0"/>
+<xs:element name="arg4" type="xs:string" minOccurs="0"/>
+<xs:element name="arg5" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="schedAppResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addEm">
+<xs:sequence>
+<xs:element name="arg0" type="xs:int"/>
+<xs:element name="arg1" type="xs:string" minOccurs="0"/>
+<xs:element name="arg2" type="xs:long"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addEmResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="loadApps">
+<xs:sequence>
+<xs:element name="arg0" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="loadAppsResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="loadMeet">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="loadMeetResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="logInExist">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"/>
+<xs:element name="arg1" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="logInExistResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="returnRole">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"/>
+<xs:element name="arg1" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="returnRoleResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

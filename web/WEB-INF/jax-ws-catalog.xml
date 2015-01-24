@@ -2,4 +2,6 @@
 <catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
     <system systemId="http://localhost:8080/ErpisWebServices/WsManService?wsdl" uri="wsdl/localhost_8080/ErpisWebServices/WsManService.wsdl"/>
     <system systemId="http://localhost:8080/ErpisWebServices/WsManService?xsd=1" uri="wsdl/localhost_8080/ErpisWebServices/WsManService.xsd_1.xsd"/>
+    <system systemId="http://localhost:38179/ErpisWebServices/WsManService?wsdl" uri="wsdl/localhost_38179/ErpisWebServices/WsManService.wsdl"/>
+    <system systemId="http://localhost:38179/ErpisWebServices/WsManService?xsd=1" uri="wsdl/localhost_38179/ErpisWebServices/WsManService.xsd_1.xsd"/>
 </catalog>

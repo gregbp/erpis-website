@@ -1,12 +1,9 @@
 
-<%@page import="dbTest.Appointment"%>
 <%@page import="java.sql.Timestamp"%>
 <%@page import="helpers.Auth"%>
 <%@page import="java.text.ParseException"%>
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="java.util.Date"%>
-<%@page import="dbTest.Manager"%>
-<%@page import="dbTest.User"%>
 <%@page import="helpers.ResponseHandler"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
