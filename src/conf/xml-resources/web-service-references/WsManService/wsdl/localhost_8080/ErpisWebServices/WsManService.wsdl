@@ -4,23 +4,41 @@
 <xsd:import namespace="http://dbTest/" schemaLocation="http://localhost:8080/ErpisWebServices/WsManService?xsd=1"/>
 </xsd:schema>
 </types>
-<message name="crUser">
-<part name="parameters" element="tns:crUser"/>
-</message>
-<message name="crUserResponse">
-<part name="parameters" element="tns:crUserResponse"/>
-</message>
 <message name="addSub">
 <part name="parameters" element="tns:addSub"/>
 </message>
 <message name="addSubResponse">
 <part name="parameters" element="tns:addSubResponse"/>
 </message>
+<message name="addEm">
+<part name="parameters" element="tns:addEm"/>
+</message>
+<message name="addEmResponse">
+<part name="parameters" element="tns:addEmResponse"/>
+</message>
+<message name="loadApps">
+<part name="parameters" element="tns:loadApps"/>
+</message>
+<message name="loadAppsResponse">
+<part name="parameters" element="tns:loadAppsResponse"/>
+</message>
+<message name="crUser">
+<part name="parameters" element="tns:crUser"/>
+</message>
+<message name="crUserResponse">
+<part name="parameters" element="tns:crUserResponse"/>
+</message>
 <message name="loadMeet">
 <part name="parameters" element="tns:loadMeet"/>
 </message>
 <message name="loadMeetResponse">
 <part name="parameters" element="tns:loadMeetResponse"/>
+</message>
+<message name="returnId">
+<part name="parameters" element="tns:returnId"/>
+</message>
+<message name="returnIdResponse">
+<part name="parameters" element="tns:returnIdResponse"/>
 </message>
 <message name="schedApp">
 <part name="parameters" element="tns:schedApp"/>
@@ -34,12 +52,6 @@
 <message name="logInExistResponse">
 <part name="parameters" element="tns:logInExistResponse"/>
 </message>
-<message name="returnId">
-<part name="parameters" element="tns:returnId"/>
-</message>
-<message name="returnIdResponse">
-<part name="parameters" element="tns:returnIdResponse"/>
-</message>
 <message name="returnRole">
 <part name="parameters" element="tns:returnRole"/>
 </message>
@@ -47,17 +59,29 @@
 <part name="parameters" element="tns:returnRoleResponse"/>
 </message>
 <portType name="WsMan">
-<operation name="crUser">
-<input wsam:Action="http://dbTest/WsMan/crUserRequest" message="tns:crUser"/>
-<output wsam:Action="http://dbTest/WsMan/crUserResponse" message="tns:crUserResponse"/>
-</operation>
 <operation name="addSub">
 <input wsam:Action="http://dbTest/WsMan/addSubRequest" message="tns:addSub"/>
 <output wsam:Action="http://dbTest/WsMan/addSubResponse" message="tns:addSubResponse"/>
 </operation>
+<operation name="addEm">
+<input wsam:Action="http://dbTest/WsMan/addEmRequest" message="tns:addEm"/>
+<output wsam:Action="http://dbTest/WsMan/addEmResponse" message="tns:addEmResponse"/>
+</operation>
+<operation name="loadApps">
+<input wsam:Action="http://dbTest/WsMan/loadAppsRequest" message="tns:loadApps"/>
+<output wsam:Action="http://dbTest/WsMan/loadAppsResponse" message="tns:loadAppsResponse"/>
+</operation>
+<operation name="crUser">
+<input wsam:Action="http://dbTest/WsMan/crUserRequest" message="tns:crUser"/>
+<output wsam:Action="http://dbTest/WsMan/crUserResponse" message="tns:crUserResponse"/>
+</operation>
 <operation name="loadMeet">
 <input wsam:Action="http://dbTest/WsMan/loadMeetRequest" message="tns:loadMeet"/>
 <output wsam:Action="http://dbTest/WsMan/loadMeetResponse" message="tns:loadMeetResponse"/>
+</operation>
+<operation name="returnId">
+<input wsam:Action="http://dbTest/WsMan/returnIdRequest" message="tns:returnId"/>
+<output wsam:Action="http://dbTest/WsMan/returnIdResponse" message="tns:returnIdResponse"/>
 </operation>
 <operation name="schedApp">
 <input wsam:Action="http://dbTest/WsMan/schedAppRequest" message="tns:schedApp"/>
@@ -67,10 +91,6 @@
 <input wsam:Action="http://dbTest/WsMan/logInExistRequest" message="tns:logInExist"/>
 <output wsam:Action="http://dbTest/WsMan/logInExistResponse" message="tns:logInExistResponse"/>
 </operation>
-<operation name="returnId">
-<input wsam:Action="http://dbTest/WsMan/returnIdRequest" message="tns:returnId"/>
-<output wsam:Action="http://dbTest/WsMan/returnIdResponse" message="tns:returnIdResponse"/>
-</operation>
 <operation name="returnRole">
 <input wsam:Action="http://dbTest/WsMan/returnRoleRequest" message="tns:returnRole"/>
 <output wsam:Action="http://dbTest/WsMan/returnRoleResponse" message="tns:returnRoleResponse"/>
@@ -78,15 +98,6 @@
 </portType>
 <binding name="WsManPortBinding" type="tns:WsMan">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
-<operation name="crUser">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
 <operation name="addSub">
 <soap:operation soapAction=""/>
 <input>
@@ -96,7 +107,43 @@
 <soap:body use="literal"/>
 </output>
 </operation>
+<operation name="addEm">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="loadApps">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="crUser">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
 <operation name="loadMeet">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="returnId">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -115,15 +162,6 @@
 </output>
 </operation>
 <operation name="logInExist">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="returnId">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

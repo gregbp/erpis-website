@@ -1,5 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.1-b419 (branches/2.3.1.x-7937; 2014-08-04T08:11:03+0000) JAXWS-RI/2.2.10-b140803.1500 JAXWS-API/2.2.11 JAXB-RI/2.2.10-b140802.1033 JAXB-API/2.2.12-b140109.1041 svn-revision#unknown. --><xs:schema xmlns:tns="http://dbTest/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://dbTest/">
 
+<xs:element name="addEm" type="tns:addEm"/>
+
+<xs:element name="addEmResponse" type="tns:addEmResponse"/>
+
 <xs:element name="addSub" type="tns:addSub"/>
 
 <xs:element name="addSubResponse" type="tns:addSubResponse"/>
@@ -7,6 +11,10 @@
 <xs:element name="crUser" type="tns:crUser"/>
 
 <xs:element name="crUserResponse" type="tns:crUserResponse"/>
+
+<xs:element name="loadApps" type="tns:loadApps"/>
+
+<xs:element name="loadAppsResponse" type="tns:loadAppsResponse"/>
 
 <xs:element name="loadMeet" type="tns:loadMeet"/>
 
@@ -28,16 +36,25 @@
 
 <xs:element name="schedAppResponse" type="tns:schedAppResponse"/>
 
-<xs:complexType name="returnId">
+<xs:complexType name="loadMeet">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="loadMeetResponse">
 <xs:sequence>
-<xs:element name="arg0" type="xs:string" minOccurs="0"/>
-<xs:element name="arg1" type="xs:string" minOccurs="0"/>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="returnIdResponse">
+<xs:complexType name="loadApps">
 <xs:sequence>
-<xs:element name="return" type="xs:int"/>
+<xs:element name="arg0" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="loadAppsResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 
@@ -57,6 +74,19 @@
 </xs:sequence>
 </xs:complexType>
 
+<xs:complexType name="returnRole">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"/>
+<xs:element name="arg1" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="returnRoleResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
 <xs:complexType name="addSub">
 <xs:sequence>
 <xs:element name="arg0" type="xs:string" minOccurs="0"/>
@@ -66,6 +96,19 @@
 <xs:complexType name="addSubResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="returnId">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"/>
+<xs:element name="arg1" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="returnIdResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int"/>
 </xs:sequence>
 </xs:complexType>
 
@@ -99,23 +142,11 @@
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="loadMeet">
-<xs:sequence/>
-</xs:complexType>
-
-<xs:complexType name="loadMeetResponse">
+<xs:complexType name="addEm">
 <xs:sequence>
-<xs:element name="return" type="tns:informationMeeting" minOccurs="0" maxOccurs="unbounded"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="informationMeeting">
-<xs:sequence>
-<xs:element name="date" type="tns:timestamp" minOccurs="0"/>
-<xs:element name="description" type="xs:string" minOccurs="0"/>
-<xs:element name="id" type="xs:int"/>
-<xs:element name="name" type="xs:string" minOccurs="0"/>
-<xs:element name="place" type="xs:string" minOccurs="0"/>
+<xs:element name="arg0" type="xs:int"/>
+<xs:element name="arg1" type="xs:string" minOccurs="0"/>
+<xs:element name="arg2" type="tns:timestamp" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 
@@ -125,16 +156,9 @@
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="returnRole">
+<xs:complexType name="addEmResponse">
 <xs:sequence>
-<xs:element name="arg0" type="xs:string" minOccurs="0"/>
-<xs:element name="arg1" type="xs:string" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="returnRoleResponse">
-<xs:sequence>
-<xs:element name="return" type="xs:string" minOccurs="0"/>
+<xs:element name="return" type="xs:boolean"/>
 </xs:sequence>
 </xs:complexType>
 </xs:schema>
