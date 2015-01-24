@@ -4,23 +4,39 @@
     Author     : GREG
 --%>
 
+<%@page import="helpers.ResponseHandler"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.util.List"%>
 <%@page contentType="text/xml" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
     <%-- start web service invocation --%><hr/>
     <%
-    //TODO na parei to amka    
-    try {
-	dbtest.WsManService service = new dbtest.WsManService();
-	dbtest.WsMan port = service.getWsManPort();
-	 // TODO initialize WS operation arguments here
-	int arg0 =123456789;
-	// TODO process result here
-	java.lang.String result = port.loadApps(arg0);
-	out.println("Result = "+result);
-    } catch (Exception ex) {
-	// TODO handle custom exceptions here
+    ResponseHandler rHandler = new ResponseHandler(
+        response,
+        request,
+        application
+    );
+    
+    if (rHandler.isLoggedIn()){
+    
+        int amka = Integer.parseInt(request.getParameter("amka"));   
+
+        try {
+            dbtest.WsManService service = new dbtest.WsManService();
+            dbtest.WsMan port = service.getWsManPort();
+             // TODO initialize WS operation arguments here
+            int arg0 =amka;
+            // TODO process result here
+            java.lang.String result = port.loadApps(arg0);
+            out.println("Result = "+result);
+        } catch (Exception ex) {
+            // TODO handle custom exceptions here
+        }
+        
     }
+
+    else
+        rHandler.redirect("index.jsp");    
+   
     %>
     <%-- end web service invocation --%><hr/>
