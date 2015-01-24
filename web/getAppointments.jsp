@@ -4,35 +4,39 @@
     Author     : GREG
 --%>
 
-<%@page import="dbTest.Appointment"%>
+<%@page import="helpers.ResponseHandler"%>
+<%@page import="java.util.ArrayList"%>
 <%@page import="java.util.List"%>
-<%@page import="dbTest.Manager"%>
 <%@page contentType="text/xml" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<%
+    <%-- start web service invocation --%><hr/>
+    <%
+    ResponseHandler rHandler = new ResponseHandler(
+        response,
+        request,
+        application
+    );
+    
+    if (rHandler.isLoggedIn()){
+    
+        int amka = Integer.parseInt(request.getParameter("amka"));   
 
-    Manager m = new Manager();
-    List <Appointment> ls = m.loadAppointments();
-    String rxml = new String();
-    
-    rxml+="<appointments>";
-    for (int i = 0; i < ls.size(); ++i){
-        rxml+="<appointment>";
-        rxml+="<fullname>"+ls.get(i).getFullName()+"</fullname>";
-        rxml+="<insurance_name>"+ls.get(i).getInsuranceName()+"</insurance_name>";
-        rxml+="<id>"+ls.get(i).getId()+"</id>";
-        rxml+="<userid>"+ls.get(i).getUserId()+"</userid>";
-        rxml+="<amka>"+ls.get(i).getAmka()+"</amka>";
-        rxml+="<emergency_reason>"+ls.get(i).getEmergencyReason()+"</emergency_reason>";
-        rxml+="<examination>"+ls.get(i).getExamination()+"</examination>";
-        rxml+="<date>"+ls.get(i).getDateTimestamp() + "</date>";
-        rxml+="<emergency_date>"+ls.get(i).getEmergencyDateTimestamp()+"</emergency_date>";
-        rxml+="<medical_office>"+ls.get(i).getMedicalOffice()+"</medical_office>";
-        rxml+="</appointment>";
+        try {
+            dbtest.WsManService service = new dbtest.WsManService();
+            dbtest.WsMan port = service.getWsManPort();
+             // TODO initialize WS operation arguments here
+            int arg0 =amka;
+            // TODO process result here
+            java.lang.String result = port.loadApps(arg0);
+            out.println("Result = "+result);
+        } catch (Exception ex) {
+            // TODO handle custom exceptions here
+        }
+        
     }
-    rxml+="</appointments>";
-    
-    out.println(rxml);
-    
-    
-%>
+
+    else
+        rHandler.redirect("index.jsp");    
+   
+    %>
+    <%-- end web service invocation --%><hr/>
