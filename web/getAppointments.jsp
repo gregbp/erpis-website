@@ -18,8 +18,20 @@
     );
     
     if (rHandler.isLoggedIn()){
-    
-        int amka = Integer.parseInt(request.getParameter("amka"));   
+        
+        String name = request.getParameter("username");
+        int amka = -1;   
+        try {
+            dbtest.WsManService service = new dbtest.WsManService();
+            dbtest.WsMan port = service.getWsManPort();
+             // TODO initialize WS operation arguments here
+            java.lang.String arg0 = "";
+            // TODO process result here
+            amka = port.getAmka(arg0);
+            out.println("Result = "+amka);
+        } catch (Exception ex) {
+            // TODO handle custom exceptions here
+        }
 
         try {
             dbtest.WsManService service = new dbtest.WsManService();
@@ -39,4 +51,4 @@
         rHandler.redirect("index.jsp");    
    
     %>
-    <%-- end web service invocation --%><hr/>
+    <%-- end web service invocation --%><hr/>    
