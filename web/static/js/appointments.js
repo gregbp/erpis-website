@@ -52,12 +52,12 @@ $(function () {
         type: 'GET',
         success: function (xml) {
             window.x = xml;
-            var informationmeetings = xml.getElementsByTagName('informationmeeting');
-            console.log(informationmeetings);
-            for (var i = 0; i < informationmeetings.length; i++) {
-                window.a = informationmeetings[i];
+            var appointments = xml.getElementsByTagName('appointment');
+            console.log(appointments);
+            for (var i = 0; i < appointments.length; i++) {
+                window.a = appointments[i];
                 createAppointment(
-                    xmlToAppointment(informationmeetings[i])
+                    xmlToAppointment(appointments[i])
                 );
             }
         }
