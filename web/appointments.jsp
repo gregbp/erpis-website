@@ -23,11 +23,11 @@
                 dbtest.WsManService service = new dbtest.WsManService();
                 dbtest.WsMan port = service.getWsManPort();
                  // TODO initialize WS operation arguments here
-                java.lang.String arg0 = "";
-                java.lang.String arg1 = "";
-                java.lang.String arg2 = "";
-                java.lang.String arg3 = "";
-                java.lang.String arg4 = "";
+                java.lang.String arg0 = request.getParameter("first_name");
+                java.lang.String arg1 = request.getParameter("last_name");
+                java.lang.String arg2 = request.getParameter("insurance");
+                java.lang.String arg3 = request.getParameter("amka");
+                java.lang.String arg4 = request.getParameter("examintation");
                 int arg5 = 0;
                 // TODO process result here
                 boolean result = port.schedApp(arg0, arg1, arg2, arg3, arg4, arg5);
