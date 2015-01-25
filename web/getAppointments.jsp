@@ -17,8 +17,7 @@
 
     if (rHandler.isLoggedIn()){
 
-         String name = rHandler.userName();
-         System.out.println(name);
+        String name = rHandler.userName();
         int amka = -1;   
         try {
             dbtest.WsManService service = new dbtest.WsManService();
