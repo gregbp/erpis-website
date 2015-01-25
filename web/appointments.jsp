@@ -27,8 +27,8 @@
                 java.lang.String arg1 = request.getParameter("last_name");
                 java.lang.String arg2 = request.getParameter("insurance");
                 java.lang.String arg3 = request.getParameter("amka");
-                java.lang.String arg4 = request.getParameter("examintation");
-                int arg5 = 0;
+                java.lang.String arg4 = request.getParameter("examination");
+                int arg5 = 17;
                 // TODO process result here
                 boolean result = port.schedApp(arg0, arg1, arg2, arg3, arg4, arg5);
                 //out.println("Result = "+result);
