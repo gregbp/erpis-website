@@ -29,7 +29,7 @@ $(function () {
     });
     
     $.ajax({
-        url: 'getAppointments.jsp',
+        url: 'getInformationMeetings.jsp',
         type: 'GET',
         success: function (xml) {
             window.x = xml;
