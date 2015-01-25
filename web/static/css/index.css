@@ -1,7 +1,7 @@
 /* Index Page CSS
 ------------------------------------------------------------------------------*/
 .content {
-    background-image: url('/erpis/static/images/stethoscope-large.jpg');
+    background-image: url('../images/stethoscope-large.jpg');
     background-size: 100% 100%;
     background-size: cover;
     background-repeat: no-repeat;
@@ -30,4 +30,21 @@
 header .right {
     marign-right: 1em;
     padding: 1em;
+}
+
+#city-clinic .photo {
+    background-image: url("../images/city-clinic.jpg");
+}
+.clinic .photo {
+    display: block;
+    opacity: 0.85;
+    border-radius: 100%;
+    height: 12em;
+    width: 12em;
+    background-repeat: no-repeat;
+    background-size: cover;
+    float: left;
+}
+.clinic {
+    text-align: right;
 }
