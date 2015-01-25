@@ -28,38 +28,22 @@ $(function () {
         });
     });
     
-    $('#schedule .submit').click(function () {
-        $.ajax({
-            url: 'appointments.jsp',
-            type: 'POST',
-            data: {
-               action: 'update',
-               ap_id: $('#ap_id').val(),
-               date: $('#date').val(),
-               office: $('#office').val(),
-            },
-            success: function () {
-                refresh();
-            },
-            error: function (jqXHR) {
-                showError(jqXHR.responseText);
-            },
-        });
-    });
+    
 
     $.ajax({
-        url: 'getAppointments.jsp',
+        url: 'getInformationMeetings.jsp',
         type: 'GET',
         success: function (xml) {
             window.x = xml;
-            var informationmeetings = xml.getElementsByTagName('informationmeeting');
-            console.log(informationmeetings);
-            for (var i = 0; i < informationmeetings.length; i++) {
-                window.a = informationmeetings[i];
+            var appointments = xml.getElementsByTagName('appointment');
+            console.log(appointments);
+            for (var i = 0; i < appointments.length; i++) {
+                window.a = appointments[i];
                 createAppointment(
-                    xmlToAppointment(informationmeetings[i])
+                    xmlToAppointment(appointments[i])
                 );
             }
         }
     });
 });
+
