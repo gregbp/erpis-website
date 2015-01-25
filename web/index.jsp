@@ -9,6 +9,7 @@
     if (rHandler.isLoggedIn()) {
         Cookie cookie = new Cookie("role", rHandler.userRole());
         response.addCookie(cookie);
+        //na bei se cookie to onoma tou 
         if (rHandler.isAdmin())
             rHandler.redirect("admin.jsp");
         //else if(rHandler.isSupervisor())
