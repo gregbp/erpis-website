@@ -56,9 +56,6 @@ function objectToTable (object) {
 
 function createAppointment (a) {
     
-    var menu = '<div class="create">'+
-        'Schedule' +
-    '</div>';
     var isScheduled = a['Appointment Date'] != "0";
     var addSupervisorMenu = window.isEmergency && (role == 'Supervisor');
     
@@ -72,7 +69,6 @@ function createAppointment (a) {
             '</div>' +
             '<div class="details">' +
                 objectToTable(a) +
-                (isScheduled? '' : menu) +
             '</div>' +
         '</li>'
     );
