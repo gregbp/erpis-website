@@ -164,4 +164,8 @@ public class ResponseHandler {
     public String userRole () {
         return this.request.getSession().getAttribute("role").toString();
     }
+    
+    public String userName () {
+        return this.request.getSession().getAttribute("username").toString();
+    }
 }
