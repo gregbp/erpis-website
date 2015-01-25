@@ -14,10 +14,11 @@
         
         String method = request.getMethod();
 
-        
+        if (method == "GET") {
             // Render appointments page
             rHandler.render("appointments.html");
-            
-         
+        } else if (method == "POST") {
+            // TODO: Add appointment here
+        }
     }
 %>
