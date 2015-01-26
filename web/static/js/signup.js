@@ -17,7 +17,7 @@ $(function () {
         disableButton('#sign-up');
         
         $.ajax({
-            url: 'signUp.jsp',
+            url: 'signup.jsp',
             type: 'POST',
             data: {
                 amka: amka,
