@@ -24,7 +24,6 @@
             <div class="menu bg-highlight">
                 <ul>
                     <li class="active"><a href="appointments.jsp">Appointments</a></li>
-                    <li><a href="emergency.jsp">Emergency Requests</a></li>
                     <li><a href="logout.jsp">Log Out</a></li>
                 </ul>
             </div>
@@ -52,7 +51,19 @@
                     <div class="error"></div>
                     <input class="submit" type="button" value="Submit" >
                 </div>
-            </div>            
+            </div>    
+            <div id="emergency" class="popup">
+                <div class="close">X</div>
+                <div class="form bg-highlight">
+                    <input id="ap_id" name="appointment_id" type="text"
+                            placeholder="Appointment ID">
+                    <input id="date" name="date" type="text" class="datepicker" 
+                           placeholder="Date">
+                    <input id="reason"  name="reason" type="text" placeholder="Reason">
+                    <div class="error"></div>
+                    <input class="submit" type="button" value="Submit">
+                </div>
+            </div>
         </div>
     </body>
 </html>

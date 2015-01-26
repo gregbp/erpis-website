@@ -8,35 +8,19 @@ $(function () {
        showPopup('#appointment');
     });
     
+    /*
+     * Handle New Appointment Submition
+     */
     $('#appointment .submit').click(function () {
         $.ajax({
             url: 'appointments.jsp',
             type: 'POST',
             data: {
-               amka: $('#amka').val(),
-               first_name: $('#first-name').val(),
-               last_name: $('#last-name').val(),
-               insurance: $('#insurance').val(),
-               examination: $('#examination').val()
-            },
-            success: function () {
-                refresh();
-            },
-            error: function (jqXHR) {
-                showError(jqXHR.responseText);
-            },
-        });
-    });
-    
-    $('#schedule .submit').click(function () {
-        $.ajax({
-            url: 'appointments.jsp',
-            type: 'POST',
-            data: {
-               action: 'update',
-               ap_id: $('#ap_id').val(),
-               date: $('#date').val(),
-               office: $('#office').val(),
+                amka: $('#amka').val(),
+                first_name: $('#first-name').val(),
+                last_name: $('#last-name').val(),
+                insurance: $('#insurance').val(),
+                examination: $('#examination').val()
             },
             success: function () {
                 refresh();
@@ -47,6 +31,30 @@ $(function () {
         });
     });
 
+    /*
+     * Handle Emergency Request Submition
+     */
+    $('#emergency .submit').click(function () {
+        $.ajax({
+            url: 'emergency_request_form.jsp',
+            type: 'POST',
+            data: {
+               appointment_id: $('#ap_id').val(),
+               date: $('#date').val(),
+               reason: $('#reason').val(),
+            },
+            success: function () {
+                refresh();
+            },
+            error: function (jqXHR) {
+                showError(jqXHR.responseText);
+            },
+        });
+    });
+
+    /*
+     * Load Appointments and dump them into the DOM
+     */
     $.ajax({
         url: 'getAppointments.jsp',
         type: 'GET',

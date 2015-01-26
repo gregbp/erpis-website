@@ -56,19 +56,28 @@ function objectToTable (object) {
 
 function createAppointment (a) {
     
-    var isScheduled = a['Appointment Date'] != "0";
-    var addSupervisorMenu = window.isEmergency && (role == 'Supervisor');
-    
+    var menu = '<div class="create">'+
+        'Emergency request' +
+    '</div>';
+
+    var emergency = a['Emergency Reason'];
+    var isScheduled = a['Appointment Date'] != '0';
+    var isEmergency = !(
+        emergency === "null" ||
+        emergency === null ||
+        emergency.length == 0
+    )
+
     $('.dump ul').append(
         '<li id="' + a.id +'" class="bg-highlight"><div class="toggle">' +
             '<span class="id">' + a['id'] + '</span>' +
             '<span class="name">' + a['Full Name'] + '</span>' +
             '<span class="insurance">' + a['Insurance'] + '</span>' +
             (isScheduled ? '' : '<span class="not-scheduled">not schecduled!</span>') +
-            (addSupervisorMenu ? '<span class="supervisor"><button class="accept">Accept</button><button class="reject">Reject</button></span>' :'') +
             '</div>' +
             '<div class="details">' +
                 objectToTable(a) +
+                (isEmergency? '' : menu) +
             '</div>' +
         '</li>'
     );
@@ -76,8 +85,8 @@ function createAppointment (a) {
         $('#' + a.id + ' .details').toggle(200);
     });
     $('#' + a.id + ' .create').click(function () {
-        showPopup('#schedule');
-        $('#schedule #ap_id').val(a.id).hide();
+        showPopup('#emergency');
+        $('#emergency #ap_id').val(a.id).hide();
     });
     $('#' + a.id + ' .accept').click(function () {
         $.ajax({
