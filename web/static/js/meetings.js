@@ -38,19 +38,35 @@ $(function () {
         url: 'getInformationMeetings.jsp',
         type: 'GET',
         success: function (xml) {
-            console.info(xml);
-            window.x = xml;
             var informationmeetings = xml.getElementsByTagName('informationmeeting');
-            console.log(informationmeetings);
             for (var i = 0; i < informationmeetings.length; i++) {
-                window.a = informationmeetings[i];
-                createAppointment(
-                    xmlToAppointment(informationmeetings[i])
+                createMeeting(
+                    xmlToMeeting(informationmeetings[i])
                 );
             }
         }
     });
-
-    
 });
 
+function xmlToMeeting (xml) {
+    var getEl = function (tagname) {
+        return xml.getElementsByTagName(tagname);
+    }
+    return {
+        'name': getEl('name')[0].innerHTML,
+        'description': getEl('description')[0].innerHTML,
+        'place': getEl('place')[0].innerHTML,
+        'date': getEl('date')[0].innerHTML
+    }
+}
+
+function createMeeting (a) {
+    console.log('appending', a)
+    $('ul').append(
+        '<li class="meeting">' +
+            '<div class="name">' + a['name'] + '</div>' +
+            '<div class="date">' + a['place'] + ' | ' + a['date'] +'</div>' +
+            '<div class="description">' + a['description'] + '</div>' +
+        '</li>'
+    );
+}
