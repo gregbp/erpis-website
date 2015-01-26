@@ -1,26 +1,22 @@
 $(function () {
    
-    $('.form input').on('keypress', function () {
-        hideError();
-    });
-    
-    $('#new-appointment').click(function () {
-       showPopup('#appointment');
-    });
-    
-    $('#appointment .submit').click(function () {
+    $('.submit').click(function () {
+        
+        var email = $('#email').val();
+        
+        if (!email) {
+            showError('Give an email');
+            return;
+        }
+        
         $.ajax({
-            url: 'appointments.jsp',
+            url: 'addSubscriber.jsp',
             type: 'POST',
             data: {
-               amka: $('#amka').val(),
-               first_name: $('#first-name').val(),
-               last_name: $('#last-name').val(),
-               insurance: $('#insurance').val(),
-               examination: $('#examination').val()
+                email: email,
             },
             success: function () {
-                refresh();
+                alert('Successfully subscribed');
             },
             error: function (jqXHR) {
                 showError(jqXHR.responseText);
@@ -28,10 +24,21 @@ $(function () {
         });
     });
     
+    $('#email').on('keypress', function (e) {
+        
+        // Handle "Enter" key
+        if (e.keyCode === 13)
+            $('.submit').click();
+        
+        // Hide error if user edits credentials
+        hideError();
+    });
+    
     $.ajax({
         url: 'getInformationMeetings.jsp',
         type: 'GET',
         success: function (xml) {
+            console.info(xml);
             window.x = xml;
             var informationmeetings = xml.getElementsByTagName('informationmeeting');
             console.log(informationmeetings);
