@@ -10,8 +10,8 @@
         <script src="static/js/lib/jquery-ui.min.js"></script>
         <script src="static/js/lib/jquery-ui-timepicker-addon.js"></script>
         <script src="static/js/common.js"></script>
-        <script src="static/js/index.js"></script>
-        <title>Erpis | Clinics</title>
+        <script src="static/js/signup.js"></script>
+        <title>Erpis | Sign Up</title>
     </head>
     <body id="index">
         <header class="bg-highlight">
@@ -20,7 +20,7 @@
                 <label>Erpis</label>
             </div>
             <div class="right">
-                <a href="signup.jsp">Sign Up</a>
+                <a href="index.jsp">Home</a>
             </div>
             <div class="right">
                 <a href="clinics.jsp">Clinics</a>
@@ -29,20 +29,23 @@
         <div class="content">
             <div class="overlay"></div>
             <div class="row moto">
-                Spreading erpis worldwide
                 <div class="sub-moto">
-                    and saving lives for that matter...
+                    Fill in the information to create an account
                 </div>
             </div>
             <div class="row login bg-highlight">
                 <div class="form">
-                    <input id="username" name="username" type="text"
-                           placeholder="Username">
+                    <input id="amka" name="amka" type="text"
+                           placeholder="AMKA">
+                    <input id="first-name" name="first-name" type="text"
+                           placeholder="First Name">
+                    <input id="last-name" name="last-name" type="text"
+                           placeholder="Last Name">
                     <input id="password" name="password" type="password"
                            placeholder="Password">
                     <div class="error"></div>
-                    <input id="sign-in" name="submit" type="button"
-                           value="Sign in">
+                    <input id="sign-up" name="submit" type="button"
+                           value="Sign up">
                 </div>
             </div>
         </div>
