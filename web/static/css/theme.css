@@ -88,7 +88,7 @@ header {
     width: 2.5em;
 }
 .icon.heart {
-    background-image: url('/erpis/static/images/heart.png');
+    background-image: url('../images/heart.png');
 }
 
 /* Menu
