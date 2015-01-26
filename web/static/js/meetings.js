@@ -1,37 +1,26 @@
 $(function () {
    
-    $('.form input').on('keypress', function () {
-        hideError();
-    });
-    
-    $('#new-appointment').click(function () {
-       showPopup('#appointment');
-    });
-    
-    $('#appointment .submit').click(function () {
+    $('.submit').click(function () {
         $.ajax({
-            url: 'appointments.jsp',
+            url: 'addSubscriber.jsp',
             type: 'POST',
             data: {
-               amka: $('#amka').val(),
-               first_name: $('#first-name').val(),
-               last_name: $('#last-name').val(),
-               insurance: $('#insurance').val(),
-               examination: $('#examination').val()
+                email: $('#email').val(),
             },
             success: function () {
-                refresh();
+                alert('Successfully subscribed');
             },
             error: function (jqXHR) {
                 showError(jqXHR.responseText);
             },
         });
     });
-    
+
     $.ajax({
         url: 'getInformationMeetings.jsp',
         type: 'GET',
         success: function (xml) {
+            console.info(xml);
             window.x = xml;
             var informationmeetings = xml.getElementsByTagName('informationmeeting');
             console.log(informationmeetings);

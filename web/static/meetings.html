@@ -10,8 +10,8 @@
         <script src="static/js/lib/jquery-ui.min.js"></script>
         <script src="static/js/lib/jquery-ui-timepicker-addon.js"></script>
         <script src="static/js/common.js"></script>
-        <script src="static/js/index.js"></script>
-        <title>Erpis | Clinics</title>
+        <script src="static/js/meetings.js"></script>
+        <title>Erpis | Meetings</title>
     </head>
     <body id="index">
         <header class="bg-highlight">
@@ -26,26 +26,18 @@
                 <a href="clinics.jsp">Clinic</a>
             </div>
             <div class="right">
-                <a href="meetings.jsp">Meetings</a>
+                <a href="index.jsp">Home</a>
             </div>
         </header>
         <div class="content">
             <div class="overlay"></div>
-            <div class="row moto">
-                Spreading erpis worldwide
-                <div class="sub-moto">
-                    and saving lives for that matter...
-                </div>
-            </div>
-            <div class="row login bg-highlight">
-                <div class="form">
-                    <input id="username" name="username" type="text"
-                           placeholder="Username">
-                    <input id="password" name="password" type="password"
-                           placeholder="Password">
+            <div class="row">
+                <div class="form subscribe bg-highlight">
+                    <p>Subscribe to our newsletter:</p>
+                    <input id="email" name="email" type="text"
+                            placeholder="john@rambo.com">                    
                     <div class="error"></div>
-                    <input id="sign-in" name="submit" type="button"
-                           value="Sign in">
+                    <input class="submit" type="button" value="Subscribe" >
                 </div>
             </div>
         </div>

@@ -13,7 +13,7 @@
         request,
         application
     );
-    String mail = request.getParameter("us-email");
+    String mail = request.getParameter("email");
     try {
 	dbtest.WsManService service = new dbtest.WsManService();
 	dbtest.WsMan port = service.getWsManPort();
