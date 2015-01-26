@@ -23,7 +23,7 @@ body {
 .overlay {
     background-color: rgba(0,0,0,0.35);
     height: 100%;
-    position: absolute;
+    position: fixed;
     width: 100%;
     z-index: -1;
 }
@@ -58,7 +58,7 @@ header {
 .content {
     background-size: 100% 100%;
     bottom: 0;
-    overflow: hidden;
+    overflow-y: scroll;
     position: absolute;
     width: 100%;
     z-index: -1;

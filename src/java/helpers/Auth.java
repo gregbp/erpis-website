@@ -10,10 +10,13 @@ public class Auth {
 
     public boolean logIn (HttpServletRequest request) {
 
+        String username = request.getParameter(USER);
+        if (username == null)
+            username = request.getAttribute(USER).toString();
         
         // Connect to the database and check if user exists
         Boolean exists = logInExist(
-            request.getParameter(USER),
+            username,
             request.getParameter(PASS)
         );
 
@@ -23,9 +26,9 @@ public class Auth {
         // Save username to session so that we know
         // if a user has already logged in
                 
-        request.getSession().setAttribute(USER, request.getParameter(USER));
-        request.getSession().setAttribute("role", returnRole(request.getParameter(USER),request.getParameter(PASS)));
-        request.getSession().setAttribute("id",  returnId(request.getParameter(USER),request.getParameter(PASS)));
+        request.getSession().setAttribute(USER, username);
+        request.getSession().setAttribute("role", returnRole(username,request.getParameter(PASS)));
+        request.getSession().setAttribute("id",  returnId(username,request.getParameter(PASS)));
         
         return true;
     }
