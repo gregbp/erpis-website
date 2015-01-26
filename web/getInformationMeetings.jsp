@@ -13,7 +13,7 @@
 	dbtest.WsMan port = service.getWsManPort();
 	// TODO process result here
 	java.lang.String result = port.loadMeet();
-	out.println("Result = "+result);
+	//out.println("Result = "+result);
     } catch (Exception ex) {
 	// TODO handle custom exceptions here
     }
