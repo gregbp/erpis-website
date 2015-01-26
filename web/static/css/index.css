@@ -48,3 +48,12 @@ header .right {
 .clinic {
     text-align: right;
 }
+
+#offices {
+    margin-top: 0;
+}
+#offices p {
+    margin: 0em 0px 0px;
+    background-color: rgba(0,0,0,0.3);
+    margin-bottom: 2px;
+}
