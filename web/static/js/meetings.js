@@ -1,11 +1,19 @@
 $(function () {
    
     $('.submit').click(function () {
+        
+        var email = $('#email').val();
+        
+        if (!email) {
+            showError('Give an email');
+            return;
+        }
+        
         $.ajax({
             url: 'addSubscriber.jsp',
             type: 'POST',
             data: {
-                email: $('#email').val(),
+                email: email,
             },
             success: function () {
                 alert('Successfully subscribed');
@@ -15,7 +23,17 @@ $(function () {
             },
         });
     });
-
+    
+    $('#email').on('keypress', function (e) {
+        
+        // Handle "Enter" key
+        if (e.keyCode === 13)
+            $('.submit').click();
+        
+        // Hide error if user edits credentials
+        hideError();
+    });
+    
     $.ajax({
         url: 'getInformationMeetings.jsp',
         type: 'GET',
