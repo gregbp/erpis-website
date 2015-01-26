@@ -52,18 +52,20 @@ else if (method == "POST") {
                 long arg2  = dt.getTime();             
                 // TODO process result here
                 boolean result = port.addEm(arg0, arg1, arg2);
-                out.println("Result = "+result);
+                //out.println("Result = "+result);
                 if(!result)
                     rHandler.error("Appointment does not exist");
                 else{
                     rHandler.success();
                 }
             } catch (Exception ex) {
-                // TODO handle custom exceptions here
+                rHandler.error("Invalid query data");// TODO handle custom exceptions here
             }
         } catch (NumberFormatException e){
             rHandler.error("Invalid appointment id");
-        } 
+        }
+    }
+}
    
     
 %>
