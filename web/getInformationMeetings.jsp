@@ -4,6 +4,7 @@
     Author     : dimbourgiotis
 --%>
 <%@page import="helpers.ResponseHandler"%>
+<%@page contentType="text/xml" pageEncoding="UTF-8"%>
 <%
     ResponseHandler rHandler = new ResponseHandler(
         response,
